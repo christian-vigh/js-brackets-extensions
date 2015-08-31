@@ -1,0 +1,5 @@
+   {
+	"dirtyIndicator" 	:  "•",
+	"formatString"	 	:  "%{dirtyIndicator} %{shortFilename} [%{mtime:auto}] - %{applicationName} %{applicationVersion}",
+	"defaultFormatString"	:  "Welcome to %{applicationName} version %{applicationVersion}"
+    }

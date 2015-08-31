@@ -1,0 +1,23 @@
+{
+	"name"		 	:  "cv.phpjs",
+	"title"			:  "phpjs integrator",
+	"version"		:  "1.0.0",
+	"description"		:  "Integrates phpjs functions.",
+	"homepage"		:  "http://github.com/christian-vigh",
+	"author"		:  "Christian Vigh christian.vigh@orange.fr (http://www.christian-vigh.net)",
+	"license"		:  "GPL",
+	"categories"		:  "general",
+	"keywords"		: 
+ 	   [
+		"general",
+    	    ],
+    	"files"			: 
+	   [
+		"main.js",
+		"README.md"
+    	    ],
+    	"engines": 
+	   {
+        	"brackets"	:  ">=0.36.0"
+    	    }
+}

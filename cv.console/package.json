@@ -1,0 +1,26 @@
+   {
+	"name"			:  "cv.console",
+	"title"			:  "Console tools",
+	"version"		:  "2.0.0",
+	"description"		:  "Shows log, error, debug and dir console information in a Brackets panel, without developer tools, based on the extension developed by Alexandru Ghiura ghalex@gmail.com (https://github.com/ghalex).",
+	"homepage"		:  "https://github.com/christian-vigh",
+	"author"		:  "Christian Vigh, christian.vigh@orange.fr (https://github.com/christian-vigh)",
+	"license"		:  "GPL V3",
+	"categories"		:  "general",
+	"keywords"		: 
+	   [
+		"debug",
+		"console"
+	    ],
+	"files"			: 
+	   [
+		"html/console.html",
+		"main.js",
+		"README.md",
+		"LICENSE"
+	    ],
+	"engines"		: 
+	   {
+		"brackets"	:  ">=0.38.0"
+	    }
+    }

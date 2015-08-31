@@ -1,0 +1,207 @@
+#editor-console-toolbar
+   {
+	display			:  block ;
+    }
+	
+#editor-console
+   {
+    }
+
+#editor-console div
+   {
+	display 		:  inline-block ;
+	padding 		:  0px;
+	margin 			:  0px ;
+    }
+
+#editor-console div.log-message
+   {
+	padding-left		:  12px ;
+    }
+	
+#editor-console div.command
+   {
+    }
+    
+#editor-console div.log
+   {
+    }
+    
+#editor-console div.info
+   {
+    }
+    
+#editor-console div.error
+   {
+        color			:  #FF0000 ;
+    }
+	
+#editor-console div.warn
+   {
+        color			:  #FF6607 ;
+    }
+	
+#editor-console div.debug
+   {
+        color			:  #0000FF ;
+    }
+	
+#editor-console div.dump .type
+   {
+	color 			:  #1F4461 ;
+	
+    }
+    
+#editor-console div.result 
+   {
+	color 			:  #4B4B4B ;
+    }
+
+#editor-console div.exception 
+   {
+	color 			:  #710606 ;
+    }
+
+#editor-console-toolbar
+   {
+    }    
+    
+#editor-console-toolbar a
+   {
+    }
+	
+#editor-console-icon 
+   {
+	background-image	:  url( '../images/console-icon.png' );
+	background-position 	:  0 0px ;
+     }
+
+#editor-console-icon.active
+   {
+	background-position	:  0 -24px;
+    }
+
+#editor-console-icon.hidden
+   {
+	display 		:  none !important ;
+    }
+
+#editor-console div.object
+   {
+	padding 		:  1px ;
+	margin-left		:  4px ;
+    }
+
+#editor-console div.object:hover
+   {
+	padding 		:  0px; 
+	text-decoration 	:  none ;
+	border			:  1px dotted #002B2B;
+	border-radius 		:  2px;
+    }
+
+#editor-console div.object:hover a
+   {
+	text-decoration		:  none ;
+    }
+
+#editor-console div.object div.before
+   {
+	content 		:  "" ;
+	width 			:  12px;
+	height 			:  12px;
+	background-image 	:  url('../images/expand.png') ;
+	margin-right 		:  6px;
+	margin-left 		:  4px ;
+    }
+
+#editor-console-toolbar table tr
+   {
+	line-height 		:  12px; 
+    }
+
+#editor-console-toolbar table tr td
+   {
+	vertical-align 		:  middle ;
+	white-space 		:  nowrap ; 
+    }
+
+#editor-console-toolbar table tr td.left
+   {
+	text-align		:  left ;
+    }
+
+#editor-console-toolbar table tr td.middle
+   {
+	width 			:  100%;
+    }
+
+#editor-console-toolbar table tr td.right
+   {
+	text-align		:  right ;
+    }
+
+#editor-console-toolbar #editor-console-command-label
+   {
+	margin-right 		:  12px;
+    }
+
+#editor-console-toolbar #editor-console-command-input-container
+   {
+        background-color        :  transparent ;
+        padding                 :  0px 12px 0px 0px ;
+        margin-top              :  0px;
+        border                  :  0px ;
+    }
+
+#editor-console-toolbar #editor-console-command-input
+   {
+	font-family 		:  Consolas, monospace ;
+	font-size		:  11px ;
+	padding			:  0px;
+	margin 			:  0px ;
+	height 			:  18px;
+        min-width               :  100px ;
+    }
+
+
+/* Object browser, history and output */
+.editor-console-popup .dialog-title .object-tostring
+   {
+	color 			:  #000000 ;
+	font-style 		:  italic ;
+	text-align		:  right ;
+    }
+
+.editor-console-popup .dialog-title .object-tostring
+   {
+    }
+
+.editor-console-popup .dialog-title .object-class
+   {
+	display 		:  inline ;
+    }
+
+.editor-console-popup .dialog-title a.close
+   {
+	padding-left 		:  12px ;
+	margin-top 		:  -6px ;
+	margin-right 		:  2px ;
+	font-size 		:  18px ;
+	font-family		:  'SourceSansPro', Helvetica, Arial, "Meiryo UI", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	cursor 			:  pointer ;
+	color 			:  #002B2B ;
+	opacity 		:  0.5 ;
+    }
+
+.editor-console-popup .dialog-title a.close:hover
+   {
+	opacity 		:  0.8 ;
+    }
+
+.editor-console-popup .modal-body
+   {
+	max-height 		:  500px ;
+	overflow-y 		:  scroll ;
+    }
+

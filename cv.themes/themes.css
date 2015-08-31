@@ -1,0 +1,37 @@
+/***
+	Predefines some styles before loading a new theme.
+ ***/
+
+.CodeMirror-scroll
+   {
+	background-color	:  transparent ;
+    }
+
+.CodeMirror-gutters
+   {
+	border-right		:   none ;
+    }
+
+
+#status-indicators, 
+#status-indicators div:not(#status-inspection), 
+#status-info
+   {
+	background		:  transparent ;
+	color			:  inherit ;
+    }
+
+.CodeMirror-activeline-background 
+   {
+	background		:  none ;
+    }
+
+#working-set-header
+   {
+	text-shadow		:  none ;
+    }
+
+.inline-widget .CodeMirror-scroll .CodeMirror-linenumbers 
+   {
+  	background-color	:  transparent ;
+    }

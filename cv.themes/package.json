@@ -1,0 +1,19 @@
+   {
+	"name"			:  "cv.themes",
+	"title"			:  "A Brackets themes manager.",
+	"version"		:  "1.0.0",
+	"description"		:  "Provides a way to switch to different themes, and adds the Thrak theme.",
+	"homepage"		:  "https://github.com/christian-vigh/brackets.cv.themes",
+	"author"		:  "Christian Vigh, christian.vigh@orange.fr (https://github.com/christian-vigh)",
+	"license"		:  "GPL V3",
+	"categories"		:  "visual",
+	"keywords"		: 
+	   [
+		"themes",
+		"skins"
+	    ],
+	"engines"		: 
+	   {
+		"brackets"	:  ">=0.38.0"
+	    }
+    }

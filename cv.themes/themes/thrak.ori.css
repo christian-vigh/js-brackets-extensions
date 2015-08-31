@@ -1,0 +1,1464 @@
+/**************************************************************************************************
+
+	General classes.
+
+ **************************************************************************************************/
+.CodeMirror-scroll
+   {
+	background-color	: transparent
+    }
+
+.CodeMirror-gutters
+   {
+	border-right		: none
+    }
+
+
+#status-indicators, 
+#status-indicators div:not(#status-inspection), 
+#status-info
+   {
+	background		:  transparent;
+	color			:  inherit;
+    }
+
+.CodeMirror-activeline-background 
+   {
+	background		: none;
+    }
+
+#working-set-header
+   {
+	text-shadow		: none;
+    }
+
+.inline-widget .CodeMirror-scroll .CodeMirror-linenumbers 
+   {
+  	background-color	: transparent;
+    }
+
+li.selected a, li a.jstree-clicked							/* Selected item */
+   {
+	color 			: #FFD455 !important;
+    }
+
+.jstree-brackets li>ins
+   {
+	margin-top 		:  0px ;
+	margin-bottom 		:  0px ;
+    }
+
+li.selected a span.extension, li a.jstree-clicked span.extension			/* Selected item extension */
+   {
+	color 			:  #FFD400 !important;
+    }
+
+li.selected a span.directory, li a.jstree-clicked span.directory			/* Selected item directory */
+   {
+	color 			:  #FFFFD4 !important;
+   }
+
+.extension										/* Filename extension */
+   {
+	color 			:  #042E59 !important ;
+	text-shadow		:  none;
+    }
+
+.directory 										/* Directory location */
+   { 	
+	color 			:  #252550 !important;
+	text-shadow 		:  none ;
+    }
+
+.panel											/* Panel background */
+   {
+	background		:  #042E59 url(../images/thrak/background.png) repeat-x 0 0; 
+    }
+
+.check-all, .bottom-panel .check-all, .bottom-panel .check-one                          /* Checkboxes */
+   {
+        margin                  :  3px 6px 3px 4px;
+        border                  :  1px solid #002B2B ;
+        border-radius           :  3px;
+        color                   :  #002B2B;
+        font-weight             :  bold ;
+        background-color        :  #FFFF55;
+    }
+
+
+.simple-toolbar-layout
+   {
+	padding 		:  1px 0px 4px 6px !important ;
+    }
+
+.btn											/* Buttons */
+   {
+        background-color     	:  #FFFFD4 ;
+        font-size            	:  12px ;
+        color                	:  #002B2B;
+        padding              	:  2px 6px;
+        cursor               	:  pointer ;
+	border 			:  1px solid #002B2B ; 
+    }
+ 
+.btn:hover										/* Buttons in hover state */
+   {
+           background-color     :  #165471 ;
+           color                :  #FFD400 ; 
+           text-shadow          :  none;
+           font-weight          :  normal ;
+           box-shadow           :  none ;
+    }
+
+.btn.primary										/* Default dialog button */
+   {
+	background-color 	:  #1F4461 !important ; 
+    }
+  
+ 
+/* Tables like those displayed in search results */
+.table-striped tbody tr td, .table-striped tbody tr th 
+   {
+        background-color        :  #FFFFD4;
+        line-height             :  12px;
+        padding-left            :  2px 0px 2px 6px !important;
+    }
+
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th
+   {
+        background-color        :  #FFFFAA;
+    }
+
+.table-striped tbody tr:nth-child(even) td, .table-striped tbody tr:nth-child(even) th
+   {
+        background-color        :  #FFFFD4;
+    }
+
+/* If you have set margins around the #open-files-container and #project-files-container items, you may want to */
+/* remove that background that seats between the item and the vertical slider... */
+.sidebar-selection-triangle
+   {
+	background 		:  transparent ;
+    }
+
+
+.sidebar-selection-triangle.triangle-visible:before 
+   {
+	right 			:  -12px ;
+	z-index 		:  2 ;
+    }
+
+
+/* Horizontal resizer, right to the opened files list */
+div.horz-resizer
+   {
+	background-color 	:  #FFFF55;
+	width			:  6px;
+	opacity 		:  1.0;
+	border-right  		:  1px solid #042E59;
+    }
+
+/* Resizer for bottom panels such as Search&Replace results */
+.bottom-panel div.vert-resizer
+   {
+	background-color 	:  #FFFF55;
+	height			:  4px;
+	border-bottom  		:  1px solid #042E59;
+        margin-left             :  7px;         /* Must match horz-resizer width + 1 pixel */
+    }
+
+/* Appearance of currently selected field/button */
+a:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+input[type="checkbox"]:focus,
+.uneditable-input,
+.btn:focus,
+.btn-mini:focus 
+   {
+	   box-shadow: 1px 1px 1px #1F4461 !important ; 
+    } 
+
+/**************************************************************************************************
+
+	Opened files & project files.
+
+ **************************************************************************************************/
+
+/* Header for opened files */
+#project-files-header 
+   {
+	padding 		:  0px;
+	border-top 		:  0px;
+	margin-top		:  3px;
+    }
+
+#working-set-header, #project-dropdown-toggle
+   {
+	color 			:  #FFD455; 
+	margin			:  6px 3px 9px 6px !important;
+	background-image 	:  url(../images/thrak/title-background.png) ;
+	background-size 	:  100%;
+	width 			:  85%;
+	text-shadow		:  2px 2px 7px #121111; 
+ 	filter			:  dropshadow(color=#121111, offx=2, offy=2);
+	font-weight 		:  bold;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+	border 			:  0px;
+	padding 		:  3px 3px 3px 12px !important;
+    }
+
+#working-set-header #working-set-option-btn
+   {
+	padding 		:  2px ;
+	top 			:  4px ;
+	right 			:  2px ;
+    }
+
+/* Opened files box */
+#open-files-container, #project-files-container
+   {
+	margin 			:  0px 9px 0px 16px;
+	background-repeat	:  no-repeat ;
+	background-color 	:  hsl(207, 33%, 51%);
+	background		:  #5A86AB; 															/* Old browsers */
+	background		:  -moz-linear-gradient(-45deg,  #5A86AB 0%, #5A86AB 74%, #7db9e8 100%); 							/* FF3.6+ */
+	background		:  -webkit-gradient(linear, left top, right bottom, color-stop(0%,#5A86AB), color-stop(74%,#5A86AB), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+	background		:  -webkit-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 							/* Chrome10+,Safari5.1+ */
+	background		:  -o-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* Opera 11.10+ */
+	background		:  -ms-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* IE10+ */
+	background		:  linear-gradient(135deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* W3C */
+	filter			:  progid:DXImageTransform.Microsoft.gradient( startColorstr='#5A86AB', endColorstr='#7db9e8',GradientType=1 ); 		/* IE6-9 fallback on horizontal gradient */
+    }
+
+#open-files-container ul
+   {
+	padding-bottom		:  0px;
+    }
+
+#open-files-container li a
+  {
+	color 			:  #FFFF55;
+   }
+
+#project-files-container li.jstree-leaf a
+  {
+	color 			:  #FFFFD4;
+   }
+
+#project-files-container .jstree-open a, #project-files-container .jstree-closed a
+  {
+	color 			:  #00002B;
+   }
+
+#project-dropwdown-toggle:hover
+   {
+    }
+
+
+/* Toolbar */
+#main-toolbar
+   {
+	background 		:  #042E59 url(../images/thrak/vertical-bar.png) repeat;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+	border 			:  0px;
+    }
+
+/* jstree customization */
+.jstree-brackets ins 
+   {
+	   background-image	: url(../images/thrak/jsTreeSprites.png) ;
+    }
+
+
+/* Platform styling */
+.platform-win ::-webkit-scrollbar                               /* Scrollbars */
+   {
+	background-color	:  #165471 ;
+    }
+
+.platform-win ::-webkit-scrollbar-thumb
+   {
+	box-shadow		:  2px 2px 2px 12px #FFFFAA inset;    
+    }
+
+.platform-win ::-webkit-scrollbar-thumb:hover
+   {
+	box-shadow		:  2px 2px 2px 12px #FFFF55 inset;    
+    }
+
+.platform-win ::-webkit-scrollbar-thumb:active
+   {
+	box-shadow		:  2px 2px 2px 12px #FFFF55 inset;    
+    }
+
+.platform-win .cm-s-default .CodeMirror-scrollbar-filler, 
+.platform-win .cm-s-default .CodeMirror-gutter-filler
+   {
+	background 		:  #042E59 url(../images/thrak/title-background.png) repeat;
+	padding-right		:  1px;
+	padding-top 		:  1px ;
+ 	box-shadow		:  1px 1px 4px #000000, inset 0px 0px 1px #ffffff;  
+    }
+
+/**************************************************************************************************
+
+	Bottom panels.
+
+ **************************************************************************************************/
+.bottom-panel
+   {
+        background-color        :  transparent;
+        padding-top             :  0px;
+    }
+
+.bottom-panel .toolbar
+   {
+        padding                 :  4px 4px 3px 6px;
+	background 		:  #042E59 url(../images/thrak/vertical-scrollbar.png) repeat;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+	border 			:  0px;
+        margin-right            :  2px ;
+	font-size 		:  12px;
+	color 			:  #FFD400;
+	padding			:  6px 0px 2px 16px;
+    }
+
+.bottom-panel .toolbar .title
+   {
+        font-size               :  12px;
+        color                   :  #FFD400 ;
+    }
+
+.bottom-panel .replace-what, .bottom-panel .replace-with
+   {
+	color 			:  #FFFF55 ;
+    }
+
+.bottom-panel-table .checkbox-column, .bottom-panel-table .line-number, .bottom-panel-table .line-text
+   {
+        padding                 :  2px 0px 2px 6px;
+    }
+
+.bottom-panel-table .checkbox-column
+   {
+    }
+
+.bottom-panel-table .line-number, .bottom-panel-table .line-text
+   {
+        color                   :  black ;
+    }
+
+.bottom-panel .toolbar .close 
+   {
+	right			:  6px;
+	top			:  5px;
+	margin-top		:  0px;
+    }
+	   
+
+/**************************************************************************************************
+
+	Status bar.
+
+ **************************************************************************************************/
+.statusbar, #status-bar
+   {
+        background-color        :  #1F4661;
+        background              :  #1F4661;
+	line-height 		:  22px ;
+	height 			:  22px ;
+    }
+
+#status-indicators
+   {
+        color                   :  #FFD400;
+    }
+
+#status-bar #status-inspection
+   {
+	background-position 	:  9px 3px ;
+    }
+
+#status-file, #status-indent, #status-language, #status-cursor
+   {
+        color                   :  #FFFF55;
+    }
+
+#status-bar #status-info
+   {
+	margin-left 		:  4px ; 
+    }
+
+/**************************************************************************************************
+
+	Editor console toolbar (cv.console).
+
+ **************************************************************************************************/
+#editor-console-wrapper
+   {
+	background-color 	:  #FFFFD4;
+    }
+
+#editor-console-panel
+   {
+    }
+
+#editor-console
+   {
+	background-color 	:  #FFFFD4;
+	border-top		:  #000000;					/* Never displays, but hides a light blue line at top of the console scrollbar... */
+    }
+
+#editor-console .console-log-object
+   {
+	color 			:  #1F4461 ;
+	cursor 			:  pointer ;
+    }
+
+#editor-console::-webkit-scrollbar
+   {
+	   background-color	:  #165471 ;
+    }
+
+#editor-console > div								/* Console text may be overridden by vertical slider */
+   {
+	font-size 		:  12px;
+    }
+
+#editor-console div.log-line							/* Log line container */
+   {
+	margin-left  		:  10px ;
+    }
+
+#editor-console div.log-linenumber						/* Log line number part, if any ; must have a min width... */
+   {
+	min-width 		:  32px ;
+	text-align 		:  center ;
+	margin 			:  0px ;
+	padding 		:  0px 3px 1px 2px ;
+	background-color 	:  #9d9a9a;
+	border-radius 		:  2px ;
+    }
+
+#editor-console div.log-linenumber.log-nolinenumber				/* Log line number part, when there is no line number... */
+   {
+	color 			:  transparent ;
+	background-color 	:  transparent ;
+	min-width 		:  32px ;
+    }
+
+#editor-console div.log-message							/* Log message part */
+   {
+	   margin-left		:  6px ;
+	   padding-left		:  0px ;
+	   text-align 		:  left ;
+    }
+
+#editor-console div.command
+   {
+	color 			:  #1F4461 ;
+	font-weight 		:  bold ;
+	font-size 		:  13px;
+    }
+    
+#editor-console div.log
+   {
+	color 			:  #000000 ;
+    }
+
+#editor-console div.info
+   {
+	font-style 		:  italic ;
+    }
+
+#editor-console div.error
+   {
+	color 			:  #BC0023;
+    }
+
+#editor-console div.debug
+   {
+	color 			:  #1F4461;
+    }
+
+#editor-console div.result 
+   {
+	color 			:  #ff0000 ;
+    }
+
+#editor-console div.result .missing-argument
+   {
+	color 			:  #ff0000 ;
+	font-style 		:  italic ;
+    }
+
+#editor-console div.result .string
+   {
+	color 			:  #0000FF ;
+    }
+
+#editor-console-toolbar 
+   {
+	line-height		:  16px;
+        background-color        :  #1F4661;
+	border-top		:  1px solid #FFDA00;
+	font-size		:  11px;
+	padding-left 		:  2px;
+	padding-bottom 		:  0px !important ;
+    }
+
+#editor-console-toolbar div.label, #editor-console-toolbar div.label a
+   {
+        color                   :  #FFFF55;
+	background-color 	:  transparent ;
+	font-weight 		:  400 ;
+    }
+
+#editor-console-toolbar div.label
+  {
+	padding-top 		:  4px ;
+	margin-bottom		:  0px ;
+   }
+
+#editor-console-toolbar #editor-console-command-input
+   {
+	margin 			:  3px 12px 0px 0px;
+	padding-left		:  4px ;
+	padding-bottom 		:  1px ;
+    }
+
+#editor-console-toolbar #editor-console-command-label
+   {
+	margin-right 		:  4px ;
+	margin-left 		:  4px ;
+    }
+
+#editor-console-toolbar #editor-console-clear
+   {
+	margin-right 		:  20px ;
+    }
+
+/**************************************************************************************************
+
+	Context menus.
+
+ **************************************************************************************************/
+.context-menu ul.dropdown-menu
+   {
+	background-color 	:  #FFFFD4 ;
+	padding 		:  0px;
+    }
+
+.context-menu ul.dropdown-menu li a
+   {
+	font-size 		:  11px ;
+	line-height 		:  normal;
+	padding 		:  2px 4px ;
+	color 			:  #1F4461;
+    }
+
+.context-menu ul.dropdown-menu li a .menu-name
+   {
+    }
+
+.context-menu ul.dropdown-menu li a .menu-shortcut
+   {
+	font-weight 		:  700;
+	color			:  #234E78;
+    }
+
+.context-menu ul.dropdown-menu li a:hover
+   {
+	background-color 	:  #1F4461;
+	color 			:  #FFFF55 ;
+    }
+
+.context-menu ul.dropdown-menu li a:hover .menu-shortcut
+   {
+	color 			:  #FFD400;
+    }
+
+.context-menu ul.dropdown-menu li .divider
+   {
+	margin 			:  3px 2px;
+	background-color 	:  #AAAAAA;
+    }
+
+
+/**************************************************************************************************
+
+	Project dropdown menu : basically the same as context menu.
+
+ **************************************************************************************************/
+#project-dropdown
+   {
+	background-color 	:  #FFFFD4 ;
+	padding 		:  0px;
+	margin-left 		:  32px;
+    }
+
+#project-dropdown li
+   {
+	padding 		:  2px 4px !important;
+    }
+
+#project-dropdown li, #project-dropdown ul, #project-dropdown .recent-folder-link
+   {
+	margin 			:  0px ;
+	line-height 		:  normal ;
+    }
+
+#project-dropdown li a
+   {
+	font-size 		:  11px ;
+	line-height 		:  normal;
+	color 			:  #1F4461;
+	padding			:  2px 2px 2px 16px !important;
+    }
+
+#project-dropdown li a .recent-folder
+   {
+    }
+
+#project-dropdown li a .recent-folder-path
+   {
+	color			:  #234E78 ;
+	font-style		:  italic ;
+    }
+
+#project-dropdown li a:hover, #project-dropdown li a:hover .recent-folder, #project-dropdown li a:hover .recent-folder-path
+   {
+	background-color 	:  #1F4461 !important;
+	color 			:  #FFFF55 !important;
+    }
+
+#project-dropdown li.divider
+   {
+	margin 			:  1px 2px !important;
+	padding 		:  0px !important;
+	background-color 	:  #AAAAAA;
+    }
+
+
+#project-dropdown #recent-folder-delete					/* Delete button when hovering the folder name */
+   {
+	margin 			:  -2px 0px 0px 0px ;
+	cursor			:  pointer ;
+	background-image	:  url("../images/thrak/close.png") ;
+	background-repeat	:  no-repeat ; 
+    }
+
+#project-dropdown #recent-folder-delete:hover				/* Do not put these attributes and the image will disappear when you hover on it */
+   {
+	background		:  none ;
+	background-image	:  url("../images/thrak/close.png") ;
+	background-repeat	:  no-repeat ; 
+    }
+
+/**************************************************************************************************
+
+	Code hint context menu.
+
+ **************************************************************************************************/
+#codehint-menu-bar .codehint-item
+   {
+	font-size 		:  11px ;
+	line-height 		:  normal;
+	padding 		:  2px 4px ;
+	color 			:  #1F4461;
+    }
+
+#codehint-menu-bar .highlight
+   {
+	background-color 	:  #FFFF55 !important;
+    }
+
+
+/**************************************************************************************************
+
+	Extension manager.
+
+ **************************************************************************************************/
+.extension-manager-dialog
+   {
+    }
+
+.extension-manager-dialog .modal-header .nav-tabs 
+   {
+	border-bottom 		:  0px;
+    }
+
+.extension-manager-dialog .modal-header .nav-tabs>li>a
+   {
+	min-width 		:  60px;
+	min-height 		:  30px;
+	padding 		:  0px 5px;
+	font-size 		:  12px;
+	background-color 	:  transparent ;
+	color 			:  #FFFF55 ;
+    }
+
+.extension-manager-dialog .modal-header .nav-tabs>.active>a
+   {
+	background-color 	:  #FFFFD4 ;
+	color 			:  #1F4461 ;
+    }
+
+.extension-manager-dialog .modal-header .search 
+   {
+	background		:  #FFFFD4;
+    }
+
+.extension-manager-dialog .modal-body
+   {
+	padding 		:  0px !important;
+    }
+
+.extension-manager-dialog .modal-body .info-message  
+   {
+	background-color	:  #FFFFAA ;
+	color 			:  #1F4461 ;
+	padding			:  3px 6px;
+	font-size 		:  11px;
+	font-style		:  italic;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+    }
+
+/**************************************************************************************************
+
+	Search & replace styling.
+	Tip : 
+		Since this dialog closes when it loses focus, you cannot use the development tools
+		to inspect all dialog elements and their classes.
+		In the src/search/FindReplace.js source, function createModalBar(), just set to
+		false the second parameter of the ModalDialog constructor.
+		To achieve the same goal without a full rebuild, edit the main.js file in the
+		brackets installation directory, but if you use Notepad++, be prepared to face with
+		slowdowns, since Notepad++ doesn't like that much very long lines.
+
+ **************************************************************************************************/
+.modal-bar
+   {
+	background-color 	:  #1F4661;
+	padding 		:  4px 0px 2px 8px;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+    }
+
+.modal-bar .search-input-container
+   {
+	margin-right 		:  0px;
+	background 		:  transparent;
+    }
+
+.modal-bar .search-input-container #find-what, .modal-bar #replace-with
+   {
+	background-color 	:  #FFFFD4;
+	font-size 		:  11px; 
+	color 			:  #000000;
+	padding 		:  0px 4px 0px 4px;
+	width 			:  200px;
+   }
+
+.modal-bar .search-input-container #find-counter
+   {
+	background-color 	:  #FFFFD4;
+	font-size 		:  11px; 
+	font-style 		:  italic;
+	color 			:  #202020;
+	padding 		:  0px 4px 0px 4px;
+    }
+
+.modal-bar .btn
+   {
+	height 			:  20px ;
+	border 			:  1px solid #1F4661;
+    }
+
+/* Search & replace : Search-specific rules */
+.modal-bar #find-group .btn
+   {
+	width 			:  24px ;
+    }
+
+.modal-bar input.no-results
+   {
+	border 			:  1px solid #BC0023;
+	box-shadow 		:  none;
+    }
+
+.modal-bar #find-group input:not(.no-results)
+   {
+	border 			:  1px solid #1F4661;
+	box-shadow 		:  none;
+    }
+
+.modal-bar #find-regexp:not(.active) .button-icon
+   {
+	content			:  "";
+	background		:  url("../images/thrak/find-replace-sprites.png") 0px 0px no-repeat;
+    }
+
+.modal-bar #find-regexp.active .button-icon
+   {
+	content			:  "";
+	background		:  url("../images/thrak/find-replace-sprites.png") 0px -24px no-repeat;
+    }
+
+.modal-bar #find-case-sensitive:not(.active) .button-icon
+   {
+	content			:  "";
+	background		:  url("../images/thrak/find-replace-sprites.png") 0px -48px no-repeat;
+    }
+
+.modal-bar #find-case-sensitive.active .button-icon
+   {
+	content			:  "";
+	background		:  url("../images/thrak/find-replace-sprites.png") 0px -72px no-repeat;
+    }
+
+.modal-bar #find-regexp:not(.active), .modal-bar #find-case-sensitive:not(.active)
+   {
+	background-color	:  #E1E1E1 ;
+    }
+
+.modal-bar #find-regexp.active, .modal-bar #find-case-sensitive.active
+   {
+	background-color	:  #FFFFD4 ;
+    }
+
+/* Find previous / find next */
+.modal-bar .navigator
+   {
+	margin-left 		:  5px;
+    }
+
+.modal-bar .navigator #find-prev
+   {
+	background-image	:  url("../images/thrak/find-replace-sprites.png") ;
+	background-repeat	:  no-repeat ;
+	background-position	:  3px -96px ;
+	width 			:  24px;
+	margin-left		:  0px ;					/* Override #find-prev left margin, which should be at the .navigator class level */
+	text-indent 		:  -10em;					/* Hide the character that represents a left arrow */
+    }
+
+.modal-bar .navigator #find-next
+   {
+	background-image	:  url("../images/thrak/find-replace-sprites.png") ;
+	background-repeat	:  no-repeat ;
+	background-position	:  3px -120px ;
+	width 			:  24px;
+	text-indent 		:  -10em;					/* Hide the character that represents a right arrow */
+    }
+
+
+/* Search & replace : Replace part */
+.modal-bar #replace-group
+   {
+	    
+    }
+
+.modal-bar #replace-group input
+   { 
+	background-color 	:  #FFFFFF ;
+	border 			:  1px solid #1F4661;
+	box-shadow 		:  none;
+    }
+
+.modal-bar #replace-group button
+   {
+	width 			:  80px;
+	font-size 		:  11px;
+    }
+
+
+/**************************************************************************************************
+
+	Goto line dialog.
+
+ **************************************************************************************************/
+.find-dialog-label
+   {
+	font-size 		:  11px;
+	margin-top 		:  -4px ;
+    }
+
+#quickOpenSearch
+   {
+	font-size 		:  11px ;
+	height 			:  13px ;
+	width 			:  160px !important ;		/* Actual input field width is set through "style" or programmatically */
+    }
+
+ 
+/**************************************************************************************************
+
+	Code mirror general style
+
+ **************************************************************************************************/
+.CodeMirror 						 	/* General editor window */
+   { 
+	background		:  #000000 ; 
+	color			:  #3BBA3B ; 
+    }
+
+.CodeMirror-lines
+   {
+	padding 		:  0px 0px 0px 2px;
+	margin-left 		:  0px ;
+    }
+
+.CodeMirror-gutters, .cm-s-default .CodeMirror-gutters		/* Gutter for line numbers */
+   { 
+	background		:  #1F4661 ; 
+	padding-left		:  6px !important;
+	padding-right 		:  2px ;			/* Must match CodeMirror-lines padding */
+    }
+
+.CodeMirror-gutter, .cm-s-default .CodeMirror-gutter
+   {
+    }
+
+.CodeMirror-activeline-background		      		/* Active line background ; foreground must be defined in .CodeMirror-activeline */
+   {
+    	background-color	:  #000000 !important;
+    }
+
+.CodeMirror-activeline .CodeMirror-gutter-wrapper		/* Active line attributes */
+   {
+	/*left 			:  -41px !important;		 */
+    }
+
+.CodeMirror-linenumber,
+.cm-s-default .CodeMirror-linenumber
+   {
+    	color			:  #FFFFD4 !important ;
+	background-color 	:  #1F4461 !important ;
+	border-right 		:  0px;
+        padding 	        :  2px 4px 1px 0px !important;
+	margin-left 		:  -6px !important ;
+	left 			:  12px !important ;
+    }
+
+.CodeMirror-activeline .CodeMirror-linenumber			/* Line number */
+   {
+    	background-color	:  #002B2B !important ;
+	color 			:  #FFFF55 !important ;
+	border-right 		:  0px;
+	z-index 		:  10 ;
+    }
+
+.CodeMirror-cursors .CodeMirror-cursor, 
+.cm-s-default .CodeMirror-cursors .CodeMirror-cursor
+   { 
+	border-left		:  1px solid white !important ; 
+	margin-top 		:  1px ;
+    }
+
+.CodeMirror pre,
+.cm-s-default .CodeMirror pre
+   {
+	padding 		:  0px 0px 0px 2px;
+    }
+
+.CodeMirror-matchingbracket
+   {
+	color 			:  #FFFF00 !important;
+	background-color 	:  #1F4461 ;
+    }
+
+.CodeMirror-selected,
+.cm-s-default .CodeMirror-selected
+   {
+	background-color 	:  #FFFFE0 !important ;
+	color 			:  #002B2B !important ;
+    }
+
+
+.CodeMirror-linewidget 
+   {
+	background-color 	:  transparent ;
+	position 		:  absolute !important;		/* Displays over the current text ; does not shift down line numbers */
+    }
+
+.CodeMirror-linewidget .inline-widget 
+   {
+	background-color 	:  transparent;
+	width 			:  auto ;
+	display 		:  block ;
+    }
+
+.CodeMirror-linewidget .inline-widget .shadow
+   {
+	display 		:  none ;			/* Width cannot be styled to fit widget contents actual width */
+    }
+
+.CodeMirror-linewidget .inline-widget a.close
+   {
+	left 			:  77px;
+	margin-top 		:  -3px;
+    }
+
+/* The following prevents two golden 1-pixel lines to be displayed on top and bottom of the widget. */
+/* Since the selector cannot be more specific using CSS3, you will have to wait a little bit, just the time for me to cope with jless... */
+.CodeMirror-linewidget .inline-widget:focus 
+   {
+	outline			: none;
+    }
+
+.CodeMirror-scrollbar-filler,
+.cm-s-default .CodeMirror-scrollbar-filler,
+.platform-win .cm-s-default .CodeMirror-scrollbar-filler
+   {
+	background-color 	:  #165471 ;
+    }
+
+
+/**************************************************************************************************
+
+	Color editor.
+
+ **************************************************************************************************/
+
+.CodeMirror-linewidget .inline-widget .color-editor
+   {
+	margin-left		:  72px ;
+	width 			:  370px;
+	min-width 		:  0px;
+	background-color 	:  #ffffd4 ;
+	padding-right 		:  0px;
+	padding-left 		:  24px;
+	border-top 		:  4px solid #1F4461 ;
+	border-bottom 		:  4px solid #002B2B ;
+	border-left		:  0px ;
+	border-right 		:  0px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor ul.swatches .value
+   {
+	color 			:  #002B2B;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor ul.button-bar li
+   {
+	width 			:  40px;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .large-swatches, .CodeMirror-linewidget .inline-widget .color-editor .swatch
+   {
+	border 			:  1px solid #002B2B;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor aside header
+   {
+	margin-bottom 		:  5px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .swatches span
+   {
+	margin-left		:  6px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor ul.swatches .value
+   {
+	font-size 		:  11px;
+	text-transform 		:  uppercase;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .color-value
+   {
+	font-size 		:  12px;
+	background-color 	:  #FFFFD4 ;
+	color 			:  #1F4461 ;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .button-bar
+   {
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .button-bar li a
+   {
+	color 			:  #002B2B !important ;
+	font-weight 		:  700;
+	background-color 	:  #ffff55 ;
+	margin-left 		:  -4px;
+	font-weight 		:  normal ;
+    }
+
+.CodeMirror-linewidget .inline-widget .color-editor .button-bar li.selected a
+   {
+	color 			:  #1F4461 !important ;
+	font-weight 		:  700;
+	margin-left 		:  -6px;
+	text-shadow		:  2px 2px 7px #121111; 
+	background-color 	:  #FFD400;
+    }
+
+
+/**************************************************************************************************
+
+	Styles editor.
+
+ **************************************************************************************************/
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor
+   {
+	 background-color 	:  #1F4461 ;
+	 margin-left		:  70px ;
+	 margin-right		:  20px ;
+	 margin-top		:  4px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-header
+   {
+	 padding		:  5px 10px 4px 28px ;
+    }
+
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-header a
+   {
+	color 			:  #FFFF55;
+	margin-right 		:  2px;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-header a span
+   {
+	color 			:  #FFFF00 ;
+	margin-right 		:  8px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-header .stylesheet-button
+   {
+	font-size 		:  11px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-gutter-wrapper
+   {
+	left 			:  -39px !important;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-holder
+   {
+	margin-top 		:  -4px;
+	background-color 	:  #111111 ;
+	border-bottom		:  2px solid #FF0000 ;
+	height 			:  auto ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-holder > div
+   {
+	border-bottom		:  2px solid #1F4461 ;
+    }
+
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .inline-editor-holder .CodeMirror-scroll
+   {
+	background-color 	:  #111111 ;
+    }
+
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-sizer
+   {
+	margin-top 		:  -4px ;
+	margin-bottom		:  4px ;		/* Needed because the inline-widget height would be shortened by margin-top pixels and a scrolllbar would appear */
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-linenumber
+   {
+    	background-color	:  #1F4461 !important ;
+	color 			:  #999999 !important ;
+	border-right 		:  0px;
+	font-size 		:  12px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-gutters,
+.cm-s-default .CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-gutters
+   {
+	width 			:  24px ;
+	background-color 	:  #1F4461 ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-activeline-background
+   {
+	background-color 	:  transparent ;
+    }
+
+.CodeMirror-linewidget .inline-widget .inline-text-editor .CodeMirror-activeline .CodeMirror-linenumber
+   {
+	color 			:  #FFFF55 !important;
+	background-color 	:  #002B2B !important ;
+    }
+
+
+.CodeMirror-linewidget .inline-widget .related-container
+   {
+	margin-right 		:  20px ; 
+	background-color 	:  #FFFFD4 ;
+	color 			:  #1F4461 ;
+	border 			:  1px solid #1F4461 ;
+	border-radius 		:  3px ;
+    }
+
+.CodeMirror-linewidget .inline-widget .related-container ul li span.related-file
+   {
+	color 			:  #1F4461 ;
+    }
+
+.CodeMirror-linewidget .inline-widget .related-container ul li.selected
+   {
+	background-color 	:  #1F4461 ;
+	color 			:  #FFFF55 ;
+    }
+
+.CodeMirror-linewidget .inline-widget .related-container ul li.selected span.related-file
+   {
+	color 			:  #FFFF00 ;
+    }
+
+.CodeMirror-gutter-filler,
+.cm-s-default .CodeMirror-gutter-filler
+   {
+    }
+
+/**************************************************************************************************
+
+	Dialog boxes.
+
+ **************************************************************************************************/
+.modal-inner-wrapper .modal-header
+   { 
+	background-image 	:  url(../images/thrak/title-background.png) ;
+	-webkit-box-shadow	:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff; 
+ 	-moz-box-shadow		:  2px 2px 8px #000000,  inset 0px 0px 1px #ffffff;  
+ 	box-shadow		:  2px 2px 8px #000000, inset 0px 0px 1px #ffffff;  
+ 	padding 		:  4px; 
+    }
+
+.modal-inner-wrapper .modal-header h1
+   {
+	padding			:  2px 0px 4px 6px ; 
+	margin 			:  0px ;
+	color 			:  #FFD400;
+	font-size 		:  13px; 
+	font-weight 		:  bold; 
+	line-height		:  16px;
+	text-shadow		:  2px 2px 7px #121111; 
+     }
+
+.modal-inner-wrapper .modal-body
+   {
+	padding			:  2px 0px 2px 8px; 
+	border-bottom		:  1px solid #002B2B;
+	border-top		:  1px solid #002B2B; 
+	background-color	:  #FFFFD4; 
+    }
+
+.modal-inner-wrapper .modal-body .dialog-message
+   {
+	color 			:  #002B2B ;
+	margin 			:  2px 0px 2px 16px ; 
+	font-size 		:  12px;
+    }
+
+.modal-inner-wrapper .modal-footer
+   {
+	background-color 	:  #5A86AB;
+	background		:  #5A86AB; 															/* Old browsers */
+	background		:  -moz-linear-gradient(-45deg,  #5A86AB 0%, #5A86AB 74%, #7db9e8 100%); 							/* FF3.6+ */
+	background		:  -webkit-gradient(linear, left top, right bottom, color-stop(0%,#5A86AB), color-stop(74%,#5A86AB), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+	background		:  -webkit-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 							/* Chrome10+,Safari5.1+ */
+	background		:  -o-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* Opera 11.10+ */
+	background		:  -ms-linear-gradient(-45deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* IE10+ */
+	background		:  linear-gradient(135deg,  #5A86AB 0%,#5A86AB 74%,#7db9e8 100%); 								/* W3C */
+	filter			:  progid:DXImageTransform.Microsoft.gradient( startColorstr='#5A86AB', endColorstr='#7db9e8',GradientType=1 ); 		/* IE6-9 fallback on horizontal gradient */
+	padding 		:  6px 12px;
+    }
+
+
+/**************************************************************************************************
+
+	Javascript-like dialog boxes.
+
+ **************************************************************************************************/
+.modal-inner-wrapper .javascript-dialog .modal-header
+   { 
+ 	margin 			:  0px ;
+	margin-bottom 		:  0px ;
+	padding 		:  2px 0px 0px 8px ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .modal-header td.left
+   {
+	width 			:  100% ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .modal-header td.right .close
+   {
+	margin-top 		:  0px ;
+	margin-right 		:  6px ;
+	cursor 			:  pointer ;
+	opacity 		:  0.4 ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .modal-header td.right .close:hover
+   {
+	opacity 		:  0.8 ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .modal-body
+   { 
+	border-bottom	 	:  0px ;
+	padding-top 		:  8px ;
+	padding-bottom		:  8px ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .modal-footer
+   { 
+	margin 			:  0px ;
+	padding 		:  4px 8px 4px 0px ;
+	background-color	:  #FFFFD4 ;
+	background 		:  #FFFFD4 ;
+	border-top		:  1px solid #1F4461 ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .javascript-dialog-button
+   { 
+	width 			:  100px ;
+	color 			:  #FFD400 ; 
+    }
+
+.modal-inner-wrapper .javascript-dialog .javascript-dialog-button.primary
+   { 
+	color			:  #FFD400 ;
+	background-color 	:  #1F4461 ;
+    }
+
+.modal-inner-wrapper .javascript-dialog .javascript-dialog-button:not(primary)
+   { 
+	background-color	:  #FFFF7F ;
+	color 			:  #1F4461 ;
+    }
+
+/**************************************************************************************************
+
+	Code mirror syntax-highlighting styling.
+
+ **************************************************************************************************/
+.cm-qualifier, 							/* A qualifier, composed of a dot and an identifier */
+.cm-s-default span.cm-qualifier
+   {
+	color 			:  #4FCE24 ;
+    }
+
+.cm-property,							/* A property */
+.cm-s-default span.cm-property
+   {
+	color 			:  #2471af ;
+    }
+
+.cm-atom,							/* An atom, such as #FFFFFF or "solid" ??? */
+.cm-s-default span.cm-atom
+   {
+	color 			:  #CE2424 ;
+    }
+
+.cm-number,							/* A number */
+.cm-s-default span.cm-number
+   {
+	color 			:  #FF0000 ;
+    }
+
+.cm-keyword, 							/* A keyword */
+.cm-s-default span.cm-keyword
+   {
+	color 			:  #4FCE24 ;
+    }
+
+.cm-def,							/* A definition */
+.cm-s-default span.cm-def
+   {
+	color 			:  #409044 ;
+    }
+
+.cm-variable,							/* A variable */
+.cm-s-default span.cm-variable
+   {
+	color 			:  #499E49 ;
+    }
+
+.cm-variable-2,							/* A variable defined outside */
+.cm-s-default span.cm-variable-2
+   {
+	color 			:  #379637 ;
+    }
+
+.cm-comment,							/* A comment */
+.cm-s-default span.cm-comment
+   {
+	color 			:  #AAAAAA ;
+	font-style		:  italic ;
+    }
+
+.cm-string,							/* A string */
+.cm-s-default span.cm-string
+   {
+	color 			:  #3E6893 ;
+    }
+
+.cm-tag,
+.cm-s-default span.cm-tag
+   {
+	color 			:  #FFFF55 ; 			/* A tag */
+    }
+
+.cm-attribute,
+.cm-s-default span.cm-attribute
+   {
+ 	color 			:  #BC0023 ; 			/* An HTML attribute */
+    }
+
+.cm-operator,
+.cm-s-default span.cm-operator					/* An operator */
+   {
+	color 			:  #c6021a ;
+    }
+
+span.CodeMirror-matchingtag,
+span.CodeMirror-matchingbracket,
+.cm-s-default span.CodeMirror-matchingtag,
+.cm-s-default span.CodeMirror-matchingbracket
+   {
+	background-color 	:  #202020 ; 			/* A matching tag */
+	color 			:  #FFFF55 !important ;
+    }
+
+.CodeMirror-focused .CodeMirror-activeline .CodeMirror-gutter-elt 
+   {
+	background		:  none ;
+	color			:  #7BD827 ;
+    }
+

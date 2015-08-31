@@ -1,0 +1,16 @@
+   {
+	"enabled" 		:  true,
+	"visible" 		:  true,
+	"console-input-width"	:  320,
+	"history"		:
+	   {
+		"enabled"			:  true,
+		"autosave"			:  true,
+		"autosave-interval"		:  300,
+		"min-command-size"		:  4,
+		"max-history-size"		:  256,
+		"command-grouping"		:  true,
+		"history-file" 			:  "data/history.json",
+		"new-command-saves-history"	:  true
+	    }
+   }

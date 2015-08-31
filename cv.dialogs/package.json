@@ -1,0 +1,29 @@
+   {
+	"name"			:  "cv.dialogs",
+	"title"			:  "Alternatives to Javascript alert(), confirm() and input() functions",
+	"version"		:  "1.0.0",
+	"description"		:  "Provides alternatives to the Javascript alert(), confirm() and input() functions.",
+	"homepage"		:  "https://github.com/christian-vigh/brackets.cv.dialogs",
+	"author"		:  "Christian Vigh, christian.vigh@orange.fr (https://github.com/christian-vigh)",
+	"license"		:  "GPL V3",
+	"categories"		:  "general",
+	"keywords"		: 
+	   [
+		"general",
+		"utilities"
+	    ],
+	"files"			: 
+	   [
+		"html/alert.html",
+		"html/confirm.html",
+		"html/input.html",
+		"html/msgbox.html",
+		"main.js",
+		"README.md",
+		"LICENSE"
+	    ],
+	"engines"		: 
+	   {
+		"brackets"	:  ">=0.36.0"
+	    }
+    }

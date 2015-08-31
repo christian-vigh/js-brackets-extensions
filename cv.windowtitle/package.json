@@ -1,0 +1,25 @@
+   {
+	"name"			:  "cv.title",
+	"title"			:  "Current window title customizer",
+	"version"		:  "1.0.0",
+	"description"		:  "A simple window title customizer.",
+	"homepage"		:  "https://github.com/christian-vigh/brackets.cv.windowtitle",
+	"author"		:  "Christian Vigh, christian.vigh@orange.fr (https://github.com/christian-vigh)",
+	"license"		:  "GPL V3",
+	"categories"		:  "general",
+	"keywords"		: 
+	   [
+		"general"
+	    ],
+	"files"			: 
+	   [
+		"main.js",
+		"README.md",
+		"LICENSE",
+		"windowtitle.json" 
+	    ],
+	"engines"		: 
+	   {
+		"brackets"	:  ">=0.36.0"
+	    }
+    }
